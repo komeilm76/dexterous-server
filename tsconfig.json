@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    // Environment
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "preserve",
+    "moduleDetection": "force",
+    "resolveJsonModule": true,
+    "allowJs": true,
+
+    // Type checking only – tsup will emit JS & .d.ts
+    "noEmit": true,
+    "emitDeclarationOnly": false,
+
+    // Module resolution for Bun
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+
+    // Interop
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    // Strictness
+    "strict": true,
+    "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Optional
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Path aliases (must also be configured in tsup)
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "#composables/*": ["./src/composables/*"]
+    },
+
+    // Bun types
+    "types": ["bun-types"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "build"]
+}
